@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Register</title>
+  <style type="text/css">
+
+      div.container{
+    }
+
+      div.insert{
+    }
+
+    div.create{
+    width: 800px;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid black;
+    margin: auto;
+    }
+
+    table{
+    height: 300px;
+    width: 900px;
+    border-top: 3px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    td{
+    border-bottom: 1px dotted black;
+    }
+
+    caption{
+    text-align: left;
+    }
+
+    .col1 {
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.8em;
+    }
+
+    .col2 {
+    text-align: left;
+    padding: 5px;
+    }
+
+    .but1 {
+    height: 25px;
+    width: 80px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    }
+
+    .but2 {
+    height: 27px;
+    width: 120px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    }
+
+    .but3 {
+    height: 35px;
+    width: 150px;
+    background-color: white;
+    border: 2px solid black;
+    }
+
+    .but4{
+    height: 35px;
+    width: 150px;
+    background-color: white;
+    border: 2px solid black;
+    }
+
+    .but1:hover {
+    background-color: #b9b9b9;
+    color: black;
+    border: 2px solid black;
+    }
+
+    .but2:hover {
+    background-color: #b9b9b9;
+    color: black;
+    border: 2px solid black;
+    }
+
+    .but3:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    }
+
+    .but4:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    }
+
+    p{
+    font-size: 0.7em;
+    }
+
+    .g{
+    font-size: 0.7em;
+    }
+
+    .c{
+    font-size: 0.7em;
+    }
+
+    .a{
+    font-size: 0.7em;
+    }
+
+    .num{
+    color: red;
+    }
+
+  </style>
+    {%with messages = get_flashed_messages()%}
+        {%if messages %}
+            <script type="text/javascript">
+                  alert("{{messages[-1]}}");
+            </script>
+        {%endif%}
+    {%endwith%}
+  <script>
+    function formCheck() {
+        //유효성 검사
+        if(fm.name.value == "") {
+            alert('이름을 입력하세요.');
+            fm.name.focus() ;
+            return false;
+        }
+        if(fm.id.value == "") {
+            alert('아이디를 입력하세요.');
+            fm.id.focus() ;
+            return false;
+        }
+        if(fm.pwd.value == "") {
+            alert('비밀번호를 입력하세요.');
+            fm.pwd.focus() ;
+            return false;
+        }
+        if(fm.pwd.value.length < 6 || fm.pwd.value.length > 16) {
+            alert('비밀번호는 6 ~ 16자 사이로 입력하세요.');
+            fm.pwd.focus() ;
+            return false;
+        }
+        if(fm.pwdCheck.value == "") {
+            alert('비밀번호 확인을 입력하세요.');
+            fm.pwdCheck.focus() ;
+            return false;
+        }
+        if(fm.pwdCheck.value != fm.pwd.value) {
+            alert('비밀번호가 다릅니다.');
+            fm.pwdCheck.focus() ;
+            return false;
+        }
+        if(fm.mailid.value == "") {
+            alert('e-mail을 입력하세요.');
+            fm.mailid.focus() ;
+            return false;
+        }
+        if(fm.email.value == "" && fm.mailslc.selectedIndex == 0) {
+            alert('e-mail을 입력하세요.');
+            fm.mailslc.focus() ;
+            return false;
+        }
+        }
+
+
+  </script>
+ </head>
+<body>
+  <form name=fm method="POST" action="/register" onsubmit="return formCheck()">
+      <div class="container">
+    <div class="insert">
+        <table>
+    <caption><h2>회원가입 양식</h2></caption>
+    <tr>
+        <td class="col1">이름</td>
+        <td class="col2"><input type="text" name="name" maxlength="5" value={{name}}></td>
+    </tr>
+    <tr>
+        <td class="col1">아이디</td>
+        <td class="col2">
+            <input type="text" name="id" maxlength="10" value={{id}}>
+            <p><span class="num">{{error}}</span></p>
+        </td>
+
+    </tr>
+    <tr>
+        <td class="col1">비밀번호</td>
+        <td class="col2">
+            <input type="password" name="pwd" maxlength="16">
+            <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+            6 ~ 16자리</span>로 입력이 가능합니다.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="col1">비밀번호 확인</td>
+        <td class="col2"><input type="password" name="pwdCheck" maxlength="16"></td>
+    </tr>
+    <tr>
+        <td class="col1">이메일</td>
+        <td class="col2">
+            <input type="text" name="mailid" value={{mailid}}>
+            <span class="a">@</span>
+            <input type="text" name="email" value={{email}}>
+            <select name="mailslc">
+                <option value="self" selected>직접입력</option>
+                <option value="naver">naver.com</option>
+                <option value="gm">gmail.com</option>
+                <option value="da">daum.com</option>
+                <option value="yah">yahoo.com</option>
+            </select>
+        </td>
+    </tr>
+        </table>
+
+  </div>
+
+  <div class="create">
+        <button class="but4" type="button" onclick="location.href='/'">취소</button>
+        <input class="but4" type="submit" value="회원가입" >
+  </div>
+  </div>
+  </form>
+ </body>
+</html>

@@ -1,0 +1,15 @@
+{% for post in posts %}
+<article>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <a class="h1" href="#">{{ post.title }}</a>
+      <p class="text-justify">{{ post.content }}</p>
+    </div>
+    <div class="col-md-2 d-flex flex-column">
+      <p class="text-muted text-center">{{ post.author.username }}</p>
+    </div>
+  </div>
+  <small class="text-muted">{{ post.create_time.strftime('%Y-%m-%d') }}</small>
+</article>
+{% endfor %}
