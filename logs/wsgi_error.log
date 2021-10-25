@@ -1,0 +1,457 @@
+[2021-10-25 06:28:28 +0000] [5870] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/flask_web
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logs/wsgi_access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/wsgi_error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7efc5e6859d8>
+  on_reload: <function OnReload.on_reload at 0x7efc5e685ae8>
+  when_ready: <function WhenReady.when_ready at 0x7efc5e685bf8>
+  pre_fork: <function Prefork.pre_fork at 0x7efc5e685d08>
+  post_fork: <function Postfork.post_fork at 0x7efc5e685e18>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7efc5e685f28>
+  worker_int: <function WorkerInt.worker_int at 0x7efc5e6a20d0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7efc5e6a21e0>
+  pre_exec: <function PreExec.pre_exec at 0x7efc5e6a22f0>
+  pre_request: <function PreRequest.pre_request at 0x7efc5e6a2400>
+  post_request: <function PostRequest.post_request at 0x7efc5e6a2488>
+  child_exit: <function ChildExit.child_exit at 0x7efc5e6a2598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7efc5e6a26a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7efc5e6a27b8>
+  on_exit: <function OnExit.on_exit at 0x7efc5e6a28c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-10-25 06:28:28 +0000] [5870] [INFO] Starting gunicorn 20.1.0
+[2021-10-25 06:28:28 +0000] [5870] [DEBUG] Arbiter booted
+[2021-10-25 06:28:28 +0000] [5870] [INFO] Listening at: http://0.0.0.0:8000 (5870)
+[2021-10-25 06:28:28 +0000] [5870] [INFO] Using worker: sync
+[2021-10-25 06:28:28 +0000] [5894] [INFO] Booting worker with pid: 5894
+[2021-10-25 06:28:28 +0000] [5896] [INFO] Booting worker with pid: 5896
+[2021-10-25 06:28:28 +0000] [5870] [DEBUG] 2 workers
+2021-10-25 06:28:28,924 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:28:28,925 INFO sqlalchemy.engine.Engine COMMIT
+2021-10-25 06:28:28,945 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:28:28,945 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:28:36 +0000] [5896] [DEBUG] GET /
+[2021-10-25 06:28:36 +0000] [5894] [DEBUG] GET /favicon.ico
+[2021-10-25 06:28:39 +0000] [5896] [DEBUG] GET /
+[2021-10-25 06:28:50 +0000] [5896] [DEBUG] GET /
+[2021-10-25 06:29:03 +0000] [5894] [DEBUG] GET /aowiejq
+[2021-10-25 06:29:07 +0000] [5894] [DEBUG] GET /main
+[2021-10-25 06:29:28 +0000] [5870] [INFO] Handling signal: term
+[2021-10-25 06:29:28 +0000] [5894] [INFO] Worker exiting (pid: 5894)
+[2021-10-25 06:29:58 +0000] [5870] [WARNING] Worker with pid 5896 was terminated due to signal 9
+[2021-10-25 06:29:58 +0000] [5870] [INFO] Shutting down: Master
+[2021-10-25 06:33:18 +0000] [6037] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/flask_web
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logs/wsgi_access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/wsgi_error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2461b8b9d8>
+  on_reload: <function OnReload.on_reload at 0x7f2461b8bae8>
+  when_ready: <function WhenReady.when_ready at 0x7f2461b8bbf8>
+  pre_fork: <function Prefork.pre_fork at 0x7f2461b8bd08>
+  post_fork: <function Postfork.post_fork at 0x7f2461b8be18>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2461b8bf28>
+  worker_int: <function WorkerInt.worker_int at 0x7f2461ba80d0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2461ba81e0>
+  pre_exec: <function PreExec.pre_exec at 0x7f2461ba82f0>
+  pre_request: <function PreRequest.pre_request at 0x7f2461ba8400>
+  post_request: <function PostRequest.post_request at 0x7f2461ba8488>
+  child_exit: <function ChildExit.child_exit at 0x7f2461ba8598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2461ba86a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2461ba87b8>
+  on_exit: <function OnExit.on_exit at 0x7f2461ba88c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-10-25 06:33:18 +0000] [6037] [INFO] Starting gunicorn 20.1.0
+[2021-10-25 06:33:18 +0000] [6037] [DEBUG] Arbiter booted
+[2021-10-25 06:33:18 +0000] [6037] [INFO] Listening at: http://0.0.0.0:8000 (6037)
+[2021-10-25 06:33:18 +0000] [6037] [INFO] Using worker: sync
+[2021-10-25 06:33:18 +0000] [6059] [INFO] Booting worker with pid: 6059
+[2021-10-25 06:33:18 +0000] [6037] [DEBUG] 2 workers
+[2021-10-25 06:33:18 +0000] [6062] [INFO] Booting worker with pid: 6062
+2021-10-25 06:33:19,532 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:33:19,533 INFO sqlalchemy.engine.Engine COMMIT
+2021-10-25 06:33:19,559 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:33:19,559 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:33:25 +0000] [6059] [DEBUG] GET /
+[2021-10-25 06:33:35 +0000] [6059] [DEBUG] GET /
+[2021-10-25 06:33:55 +0000] [6059] [DEBUG] GET /
+[2021-10-25 06:34:06 +0000] [6037] [CRITICAL] WORKER TIMEOUT (pid:6062)
+[2021-10-25 06:34:06 +0000] [6062] [INFO] Worker exiting (pid: 6062)
+[2021-10-25 06:34:06 +0000] [6096] [INFO] Booting worker with pid: 6096
+2021-10-25 06:34:07,290 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:34:07,290 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:35:37 +0000] [6059] [INFO] Worker exiting (pid: 6059)
+[2021-10-25 06:35:37 +0000] [6096] [INFO] Worker exiting (pid: 6096)
+[2021-10-25 06:35:37 +0000] [6037] [INFO] Handling signal: term
+[2021-10-25 06:35:37 +0000] [6037] [WARNING] Worker with pid 6059 was terminated due to signal 15
+[2021-10-25 06:35:37 +0000] [6037] [WARNING] Worker with pid 6096 was terminated due to signal 15
+[2021-10-25 06:35:37 +0000] [6037] [INFO] Shutting down: Master
+[2021-10-25 06:35:40 +0000] [6185] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/flask_web
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logs/wsgi_access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/wsgi_error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff5a4c399d8>
+  on_reload: <function OnReload.on_reload at 0x7ff5a4c39ae8>
+  when_ready: <function WhenReady.when_ready at 0x7ff5a4c39bf8>
+  pre_fork: <function Prefork.pre_fork at 0x7ff5a4c39d08>
+  post_fork: <function Postfork.post_fork at 0x7ff5a4c39e18>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff5a4c39f28>
+  worker_int: <function WorkerInt.worker_int at 0x7ff5a4c560d0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff5a4c561e0>
+  pre_exec: <function PreExec.pre_exec at 0x7ff5a4c562f0>
+  pre_request: <function PreRequest.pre_request at 0x7ff5a4c56400>
+  post_request: <function PostRequest.post_request at 0x7ff5a4c56488>
+  child_exit: <function ChildExit.child_exit at 0x7ff5a4c56598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff5a4c566a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff5a4c567b8>
+  on_exit: <function OnExit.on_exit at 0x7ff5a4c568c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-10-25 06:35:40 +0000] [6185] [INFO] Starting gunicorn 20.1.0
+[2021-10-25 06:35:40 +0000] [6185] [DEBUG] Arbiter booted
+[2021-10-25 06:35:40 +0000] [6185] [INFO] Listening at: http://0.0.0.0:8000 (6185)
+[2021-10-25 06:35:40 +0000] [6185] [INFO] Using worker: sync
+[2021-10-25 06:35:40 +0000] [6207] [INFO] Booting worker with pid: 6207
+[2021-10-25 06:35:40 +0000] [6185] [DEBUG] 2 workers
+[2021-10-25 06:35:40 +0000] [6210] [INFO] Booting worker with pid: 6210
+2021-10-25 06:35:41,288 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:35:41,288 INFO sqlalchemy.engine.Engine COMMIT
+2021-10-25 06:35:41,332 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:35:41,332 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:35:42 +0000] [6207] [DEBUG] GET /
+[2021-10-25 06:35:43 +0000] [6207] [DEBUG] GET /
+[2021-10-25 06:35:43 +0000] [6210] [DEBUG] GET /
+[2021-10-25 06:35:43 +0000] [6210] [DEBUG] GET /
+[2021-10-25 06:35:44 +0000] [6207] [DEBUG] GET /
+[2021-10-25 06:35:44 +0000] [6207] [DEBUG] GET /
+[2021-10-25 06:36:14 +0000] [6185] [CRITICAL] WORKER TIMEOUT (pid:6210)
+[2021-10-25 06:36:14 +0000] [6210] [INFO] Worker exiting (pid: 6210)
+[2021-10-25 06:36:14 +0000] [6226] [INFO] Booting worker with pid: 6226
+2021-10-25 06:36:15,082 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:36:15,083 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:40:51 +0000] [6226] [DEBUG] GET /
+[2021-10-25 06:41:22 +0000] [6185] [CRITICAL] WORKER TIMEOUT (pid:6207)
+[2021-10-25 06:41:22 +0000] [6207] [INFO] Worker exiting (pid: 6207)
+[2021-10-25 06:41:22 +0000] [6262] [INFO] Booting worker with pid: 6262
+2021-10-25 06:41:22,529 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:41:22,530 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:42:44 +0000] [6185] [CRITICAL] WORKER TIMEOUT (pid:6262)
+[2021-10-25 06:42:44 +0000] [6262] [INFO] Worker exiting (pid: 6262)
+[2021-10-25 06:42:44 +0000] [6267] [INFO] Booting worker with pid: 6267
+2021-10-25 06:42:44,761 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:42:44,761 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:46:30 +0000] [6185] [CRITICAL] WORKER TIMEOUT (pid:6226)
+[2021-10-25 06:46:30 +0000] [6226] [INFO] Worker exiting (pid: 6226)
+[2021-10-25 06:46:30 +0000] [6297] [INFO] Booting worker with pid: 6297
+2021-10-25 06:46:31,155 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:46:31,156 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:47:12 +0000] [6185] [CRITICAL] WORKER TIMEOUT (pid:6267)
+[2021-10-25 06:47:12 +0000] [6267] [INFO] Worker exiting (pid: 6267)
+[2021-10-25 06:47:12 +0000] [6325] [INFO] Booting worker with pid: 6325
+2021-10-25 06:47:13,291 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:47:13,291 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:47:44 +0000] [6297] [INFO] Worker exiting (pid: 6297)
+[2021-10-25 06:47:44 +0000] [6325] [INFO] Worker exiting (pid: 6325)
+[2021-10-25 06:47:44 +0000] [6185] [INFO] Handling signal: term
+[2021-10-25 06:47:44 +0000] [6185] [WARNING] Worker with pid 6297 was terminated due to signal 15
+[2021-10-25 06:47:44 +0000] [6185] [WARNING] Worker with pid 6325 was terminated due to signal 15
+[2021-10-25 06:47:44 +0000] [6185] [INFO] Shutting down: Master
+[2021-10-25 06:49:29 +0000] [6501] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/flask_web
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logs/wsgi_access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/wsgi_error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f69725f19d8>
+  on_reload: <function OnReload.on_reload at 0x7f69725f1ae8>
+  when_ready: <function WhenReady.when_ready at 0x7f69725f1bf8>
+  pre_fork: <function Prefork.pre_fork at 0x7f69725f1d08>
+  post_fork: <function Postfork.post_fork at 0x7f69725f1e18>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f69725f1f28>
+  worker_int: <function WorkerInt.worker_int at 0x7f697260f0d0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f697260f1e0>
+  pre_exec: <function PreExec.pre_exec at 0x7f697260f2f0>
+  pre_request: <function PreRequest.pre_request at 0x7f697260f400>
+  post_request: <function PostRequest.post_request at 0x7f697260f488>
+  child_exit: <function ChildExit.child_exit at 0x7f697260f598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f697260f6a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f697260f7b8>
+  on_exit: <function OnExit.on_exit at 0x7f697260f8c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2021-10-25 06:49:29 +0000] [6501] [INFO] Starting gunicorn 20.1.0
+[2021-10-25 06:49:29 +0000] [6501] [DEBUG] Arbiter booted
+[2021-10-25 06:49:29 +0000] [6501] [INFO] Listening at: http://0.0.0.0:8000 (6501)
+[2021-10-25 06:49:29 +0000] [6501] [INFO] Using worker: sync
+[2021-10-25 06:49:29 +0000] [6524] [INFO] Booting worker with pid: 6524
+[2021-10-25 06:49:29 +0000] [6527] [INFO] Booting worker with pid: 6527
+[2021-10-25 06:49:29 +0000] [6501] [DEBUG] 2 workers
+2021-10-25 06:49:30,572 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:49:30,572 INFO sqlalchemy.engine.Engine COMMIT
+2021-10-25 06:49:30,592 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:49:30,592 INFO sqlalchemy.engine.Engine COMMIT
+[2021-10-25 06:49:31 +0000] [6524] [DEBUG] GET /
+[2021-10-25 06:49:53 +0000] [6527] [DEBUG] GET /
+[2021-10-25 06:50:23 +0000] [6501] [CRITICAL] WORKER TIMEOUT (pid:6524)
+[2021-10-25 06:50:23 +0000] [6524] [INFO] Worker exiting (pid: 6524)
+[2021-10-25 06:50:23 +0000] [6546] [INFO] Booting worker with pid: 6546
+2021-10-25 06:50:24,290 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-10-25 06:50:24,290 INFO sqlalchemy.engine.Engine COMMIT

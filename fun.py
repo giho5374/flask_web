@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, flash, session, request, url_for
 from werkzeug.security import check_password_hash
 from db_model import User, Post
-from app import db
+from main import db
 from datetime import datetime
 
 app_fun = Blueprint('app_fun', __name__)
