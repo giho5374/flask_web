@@ -64,7 +64,7 @@ def register():
         db.session.commit()
         flash('회원가입이 완료되었습니다.')
         return redirect(url_for('index'))
-    return render_template('register.html', objt={'data': User})
+    return render_template('register.html')
 
 
 @app_fun.route('/post', methods=['GET', 'POST'])
