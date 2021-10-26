@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, flash, session, request, url_for
 from werkzeug.security import check_password_hash
 from db_model import User, Post
-from main import db
+from main_app import db
 from datetime import datetime
 
 app_fun = Blueprint('app_fun', __name__)
@@ -41,7 +41,7 @@ def login():
             return render_template('login.html')
         if check_password_hash(pw, request.form['pwd']):
             session['userid'] = request.form['id']
-            return redirect(url_for('main'))
+            return redirect('/main')
         else:
             flash('로그인 정보가 다릅니다.')
             return render_template('login.html', id=request.form['id'])
@@ -73,13 +73,12 @@ def post():
         flash('로그인이 필요한 서비스입니다.')
         return redirect('login')
     if request.method == 'POST':
-        post = Post(title=request.form['title'], content=request.form['content'], author=session_id_check().user_id,
+        post = Post(title=request.form['title'], content=request.form['content'], author=session_id_check(),
                     create_time=datetime.now())
         db.session.add(post)
         db.session.commit()
         return redirect('main')
     return render_template('post.html')
-
 
 @app_fun.route('/board')
 def board():
