@@ -80,10 +80,13 @@ def post():
         return redirect('main')
     return render_template('post.html')
 
-@app_fun.route('/wisdom_kim')
+@app_fun.route('/wisdom_kim',methods = ['GET','POST'])
 def wisdom_kim():
-    return '<img src="static/cat.jpeg" width=300 height=300><br>' \
-           '<h1> Hi </h1>'
+    if request.method == 'POST':
+        return 'I love You~'
+    return '<form method="post" action="/wisdom_kim"><img src="static/cat.jpeg" width=300 height=300><br>' \
+           '<h1> Hi </h1>'\
+            '<input type="submit" value="click me"></form>'
 
 @app_fun.route('/board')
 def board():
