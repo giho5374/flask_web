@@ -17,7 +17,9 @@ def before_request():
 
 from fun import app_fun
 from api_app import api
+from est_app import est_app
 app.register_blueprint(app_fun)
 app.register_blueprint(api)
+app.register_blueprint(est_app)
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000,debug=True)

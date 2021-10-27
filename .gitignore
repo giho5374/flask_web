@@ -2,3 +2,4 @@ site.db
 __pycache__/
 .idea/
 config.py
+.DS_Store

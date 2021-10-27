@@ -80,6 +80,11 @@ def post():
         return redirect('main')
     return render_template('post.html')
 
+@app_fun.route('/wisdom_kim')
+def wisdom_kim():
+    return '<img src="static/cat.jpeg" width=300 height=300><br>' \
+           '<h1> Hi </h1>'
+
 @app_fun.route('/board')
 def board():
     return render_template('board.html', posts=Post.query.all())
