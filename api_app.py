@@ -19,7 +19,6 @@ def statics_search_service():
     response = requests.get(url,params=params)
     return response.content
 
-
 @api.route('/api/apartment_trade')
 def apartment_trade():
     url = 'http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade'
@@ -30,4 +29,6 @@ def apartment_trade():
     params = {'serviceKey': DECODE, 'LAWD_CD': lawd_cd, 'DEAL_YMD': deal_ymd}
     response = requests.get(url,params=params)
     result = json.loads(json.dumps(xmltodict.parse(response.text), ensure_ascii=False))['response']['body']['items']
-    return result
+    result =  pd.DataFrame().from_dict(result['item'])
+    style_res = result.style.set_properties(**{'background-color':'white','border':'0.5px solid black','font-size':'15px'})
+    return style_res.render()
