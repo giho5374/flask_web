@@ -84,7 +84,8 @@ def post():
 def wisdom_kim():
     if request.method == 'POST':
         return 'I love You~'
-    return '<form method="post" action="/wisdom_kim"><img src="static/cat.jpeg" width=300 height=300><br>' \
+    return '<form method="post" action="/wisdom_kim">' \
+           '<img src="static/cat.jpeg" width=300 height=300><br>' \
            '<h1> Hi </h1>'\
             '<input type="submit" value="click me"></form>'
 

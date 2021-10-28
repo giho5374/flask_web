@@ -1,7 +1,9 @@
 import requests
-from flask import Blueprint,request,jsonify
+from flask import Blueprint,request,url_for
 from config import *
 import xmltodict,json
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 import pandas as pd
 
 api = Blueprint('api',__name__)
@@ -30,8 +32,11 @@ def apartment_trade():
     response = requests.get(url,params=params)
     result = json.loads(json.dumps(xmltodict.parse(response.text), ensure_ascii=False))['response']['body']['items']
     if result:
-        result =  pd.DataFrame().from_dict(result['item'])
+        result = pd.DataFrame().from_dict(result['item'])
         style_res = result.style.set_properties(**{'background-color':'white','border':'0.5px solid black','font-size':'15px'})
-        return style_res.render()
+        return f'''<a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")-relativedelta(months=1)).strftime("%Y%m")}'>이전</a>
+        <a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")+relativedelta(months=1)).strftime("%Y%m")}'>다음</a>
+               ''' + style_res.render()
+
     return '<h1>There is No trade in that month</h1>'
 
