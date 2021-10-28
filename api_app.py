@@ -33,10 +33,16 @@ def apartment_trade():
     result = json.loads(json.dumps(xmltodict.parse(response.text), ensure_ascii=False))['response']['body']['items']
     if result:
         result = pd.DataFrame().from_dict(result['item'])
-        style_res = result.style.set_properties(**{'background-color':'white','border':'0.5px solid black','font-size':'15px'})
+        result['일'] = result['일'].astype('int')
+        result.sort_values('일',inplace=True)
+        style_res = result.style.set_properties(**{'background-color':'white','border':'0.1px solid black','font-size':'15px'})
         return f'''<a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")-relativedelta(months=1)).strftime("%Y%m")}'>이전</a>
         <a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")+relativedelta(months=1)).strftime("%Y%m")}'>다음</a>
-               ''' + style_res.render()
+               ''' + style_res.hide_index().render()
 
-    return '<h1>There is No trade in that month</h1>'
+    return '<h1>There is No trade in that month</h1>'\
+           f'''<a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")-relativedelta(months=1)).strftime("%Y%m")}'>이전</a>
+        <a href='{url_for("api.apartment_trade")}?LAWD_CD={lawd_cd}&DEAL_YMD={(datetime.strptime(deal_ymd,"%Y%m")+relativedelta(months=1)).strftime("%Y%m")}'>다음</a>
+               '''
+
 
