@@ -13,9 +13,9 @@ db.create_all()
 @app.before_request
 def before_request():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=1)
+    app.permanent_session_lifetime = timedelta(minutes=5)
 
-from fun import app_fun
+from fun_app import app_fun
 from api_app import api
 from est_app import est_app
 app.register_blueprint(app_fun)

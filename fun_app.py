@@ -1,33 +1,19 @@
-from flask import Blueprint, render_template, redirect, flash, session, request, url_for
 from werkzeug.security import check_password_hash
-from db_model import User, Post
 from main_app import db
 from datetime import datetime
-
+from tools import *
 app_fun = Blueprint('app_fun', __name__)
-
-
-def login_check():
-    return 'userid' not in session
-
-
-def session_id_check():
-    return User.query.filter(User.user_id == session['userid']).first()
-
 
 @app_fun.route('/', methods=['GET', 'POST'])
 def index():
-    if not login_check():
+    if 'userid' in session:
         return redirect('main')
     return render_template('index.html')
 
 
 @app_fun.route('/main')
 def main():
-    if login_check():
-        flash('로그인이 필요한 서비스입니다.')
-        return redirect('/')
-
+    login_check()
     return render_template('main.html', userid=session_id_check().user_name)
 
 

@@ -6,9 +6,10 @@
 </head>
 <body>
 	<h1>부동산 거래 조회</h1>
+    Welcome! {{user}}
 <form method="post" action="/search">
-    <select name="city">
-        <option value="default" selected>도시 선택</option>
+    지역구 선택 : <select name="city">
+         <option value="default" selected>---군/구---</option>
 
         {% for city in city_list %}
         <option value="{{city}}">{{city}}</option>
