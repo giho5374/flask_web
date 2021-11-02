@@ -75,6 +75,12 @@ def wisdom_kim():
            '<h1> Hi </h1>'\
             '<input type="submit" value="click me"></form>'
 
+@app_fun.route('/board/<number>')
+def board_detail(number):
+    query = Post.query.filter(Post.id == number).first()
+
+    return render_template('detail.html',query = query,)
+
 @app_fun.route('/board')
 def board():
     return render_template('board.html', posts=Post.query.all())

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<article>
+  <hr>
+  <div class="row">
+    <div class="col">
+      Title : <a class="h1">{{ query.title }}</a>
+        <p class="text-muted text-center">글쓴이 : {{ query.author.user_name }}</p>
+        <small class="text-muted">발행일 : {{ query.create_time.strftime('%Y-%m-%d') }}</small>
+        <p class="text-justify">{{ query.content }}</p>
+        {% if query.
+        <button type="button" onclick="#">수정</button>
+        <button type="button" onclick="#">삭제</button>
+    </div>
+  </div>
+</article>
+</body>
+</html>
